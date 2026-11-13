@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "dll-x64-release",
+      "displayName": "CS2ESP DLL x64 Release",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/../cs2esp-dll-build",
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "dll-x64-release",
+      "configurePreset": "dll-x64-release",
+      "configuration": "Release",
+      "targets": ["cs2esp"],
+      "jobs": 8
+    }
+  ]
+}
